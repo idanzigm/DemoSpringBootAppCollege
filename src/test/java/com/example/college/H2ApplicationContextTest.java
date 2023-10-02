@@ -19,10 +19,10 @@ public class H2ApplicationContextTest {
 
     @Test
     public void contextLoadsH2ConsoleCheck() throws InterruptedException {
-        Thread.sleep(Long.MAX_VALUE);
+        Thread.sleep(Long.MAX_VALUE); //remember to manually shut down this connection
     }
 
     @Test
-    public void contextLoads() {
+    public void contextLoads(){
     }
 }
