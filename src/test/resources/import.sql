@@ -12,8 +12,6 @@ insert into college(college_name) values('College of Maths and Science');
 insert into college(college_name) values('College of Arts and Humanities');
 insert into college(college_name) values('College of Business and Economics');
 
-SELECT * FROM college
-
 insert into course(course_name, description, college_id) values('Calculus', 'Derivatives, Integration, and Infinite Series', 1);
 insert into course(course_name, description, college_id) values('Discrete Mathematics', 'Proofs and Data Structures', 1);
 insert into course(course_name, description, college_id) values('Works of Shakespeare', 'Critical readings of Othello and King Lear', 2);

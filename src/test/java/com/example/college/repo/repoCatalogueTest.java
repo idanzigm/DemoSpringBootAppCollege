@@ -15,7 +15,6 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD;
 
 @DataJpaTest
-@ExtendWith(SpringExtension.class)
 @SpringJUnitConfig(classes = CollegeApplication.class)
 @Transactional
 @DirtiesContext(classMode = BEFORE_EACH_TEST_METHOD)
