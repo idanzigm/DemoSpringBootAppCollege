@@ -1,7 +1,5 @@
 package com.example.college.repo;
 
-import com.example.college.models.course;
-import com.example.college.models.registry;
 import com.example.college.models.student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -19,13 +17,8 @@ public class repoStudent implements repoStudentInterface {
 
     //========================CREATE========================
     @Override
-    public int saveStudent(student Student) {
-        try {
-            entityManager.persist(Student);
-            return 0;
-        } catch (Exception e) {
-            return 1;
-        }
+    public void saveStudent(student Student) {
+        entityManager.persist(Student);
     }
 
     //========================READ========================

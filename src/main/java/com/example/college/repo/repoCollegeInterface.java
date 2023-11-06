@@ -16,7 +16,7 @@ public interface repoCollegeInterface {
 
     public college getCollegeByCourse(int courseId);
 
-    public List<college> getAllColleges();
+    public List<college> returnCatalogue();
 
     //========================UPDATE=======================
     public void updateCollege(college college);

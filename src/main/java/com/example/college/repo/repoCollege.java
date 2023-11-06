@@ -40,8 +40,10 @@ public class repoCollege implements repoCollegeInterface{
     }
 
     @Override
-    public List<college> getAllColleges() {
-        return null;
+    public List<college> returnCatalogue() {
+        return entityManager.createQuery
+                        ("SELECT c FROM college c JOIN FETCH c.courses", college.class)
+                .getResultList();
     }
 
     //========================UPDATE=======================

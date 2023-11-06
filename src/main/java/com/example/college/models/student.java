@@ -60,6 +60,14 @@ public class student {
         this.lastName = lastName;
     }
 
+    public List<course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "owner{" +

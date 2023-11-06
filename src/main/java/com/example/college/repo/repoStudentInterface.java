@@ -8,7 +8,7 @@ import java.util.List;
 public interface repoStudentInterface {
 
     //========================CREATE========================
-    public int saveStudent(student Student);
+    public void saveStudent(student Student);
 
     //========================READ========================
     public student getStudentById(int studentId);

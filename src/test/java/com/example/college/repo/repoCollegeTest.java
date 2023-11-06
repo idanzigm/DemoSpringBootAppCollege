@@ -1,6 +1,7 @@
 package com.example.college.repo;
 
 import com.example.college.CollegeApplication;
+import com.example.college.models.college;
 import com.example.college.models.course;
 import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
@@ -12,16 +13,18 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import java.util.List;
+
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD;
 
 @DataJpaTest
 @SpringJUnitConfig(classes = CollegeApplication.class)
 @Transactional
 @DirtiesContext(classMode = BEFORE_EACH_TEST_METHOD)
-public class repoCatalogueTest {
+public class repoCollegeTest {
 
     @Autowired
-    private repoCatalogue testCatalogueRepository;
+    private repoCollege testCollegeRepository;
     @Autowired
     private repoCourse testCourseRepository;
 
@@ -30,26 +33,16 @@ public class repoCatalogueTest {
         //given
 
         //when
+        List<college> colleges = testCollegeRepository.returnCatalogue();
 
         //then
-    }
+        for (college college : colleges) {
+            System.out.println(college.getName());
+            for (course course : college.getCourses()) {
+                System.out.println(course.toString());
+            }
+        }
 
-    @Test
-    public void givenCollegeIdAndCourseId_whenAddCourse_thenReturnCourseEntry() {
-        //given
-
-        //when
-
-        //then
-    }
-
-    @Test
-    public void givenCollegeIdAndCourseId_whenRemoveCourse_thenReturnNothing() {
-        //given
-
-        //when
-
-        //then
     }
 
 

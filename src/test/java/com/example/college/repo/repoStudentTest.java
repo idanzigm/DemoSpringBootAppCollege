@@ -200,9 +200,13 @@ public class repoStudentTest {
 
         //then
         Assertions.assertThat(testStudentRepository.getStudentById(studentId)).isNull();
-        for (com.example.college.models.registry registry : testRegistryRepository.returnRegistry()) {
-            System.out.println(registry.getStudent().toString());
-            Assertions.assertThat(registry.getStudent().getId()).isNotEqualTo(studentId);
+        for (com.example.college.models.course course : testRegistryRepository.returnRegistryByCourse()) {
+
+            List<student> students = course.getStudents();
+            for (com.example.college.models.student student : students) {
+                Assertions.assertThat(student.getId()).isNotEqualTo(studentId);
+            }
+
         }
     }
 
